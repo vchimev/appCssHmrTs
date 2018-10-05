@@ -1,7 +1,7 @@
 import { View, EventData } from "tns-core-modules/ui/core/view";
 import { Observable } from 'data/observable';
 import { Frame } from "tns-core-modules/ui/frame";
-import { loadCss } from 'tns-core-modules/ui/styling/style-scope';
+// import { loadCss } from 'tns-core-modules/ui/styling/style-scope';
 
 const newCss = "./new.css";
 
@@ -37,8 +37,9 @@ export class HelloWorldModel extends Observable {
     }
 
     private refreshAppCss(frame: Frame) {
-        loadCss(newCss);
-        frame._onCssStateChange();
+        // loadCss(newCss);
+        // frame._onCssStateChange();
+        global.__onLiveSync(newCss);
     }
 
     private updateMessage() {
